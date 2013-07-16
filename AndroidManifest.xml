@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.mytwitter"
+      android:versionCode="1"
+      android:versionName="1.0">
+    <uses-sdk android:minSdkVersion="8" />
+
+    <application android:icon="@drawable/background" 
+    	android:label="@string/app_name"
+    	android:name=".MyTwitterApplication" 
+        android:debuggable="true" > <!-- tell Android system to instantiate MyTwitterApplication object as the Application  -->
+        
+        <activity android:name=".TimelineActivity"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>      
+        <activity android:name=".StatusActivity"
+                  android:label="@string/app_name">
+        </activity>
+        <activity android:name=".PrefsActivity"
+                  android:label="@string/titlePrefs">
+        </activity>
+                     
+        <service android:name=".UpdaterService"/>          
+    
+    	<receiver android:name=".BootReceiver">
+      		<intent-filter>
+        		<action android:name="android.intent.action.BOOT_COMPLETED"/>
+      		</intent-filter>
+    	</receiver>
+    	
+    	<provider android:name=".StatusProvider"
+      		android:authorities="com.mytwitter.statusprovider" />
+
+    	<receiver android:name=".MyTwitterWidget" android:label="@string/msgLastTimelineUpdate">
+      		<intent-filter>
+        		<action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+      		</intent-filter>
+      		<intent-filter>
+        		<action android:name="com.mytwitter.TIMELINE_UPDATED" />
+      		</intent-filter>
+      		<meta-data android:name="android.appwidget.provider"
+        		android:resource="@xml/mytwitter_widget_info" />
+    	</receiver>
+    
+    </application>
+    
+    <uses-permission android:name="android.permission.INTERNET"/> <!--  grants application INTERNET permission -->
+</manifest>
+
+<!-- <intent-filter> specifies which broadcasts trigger the receiver to become activated -->

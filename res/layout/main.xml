@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Main Layout of Status Activity -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical" 
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent" 
+  android:background="@drawable/background">
+
+  <!-- Title TextView-->
+  <TextView android:layout_width="fill_parent"
+    android:layout_height="wrap_content" 
+    android:gravity="center"
+    android:layout_margin="10dp"  
+    android:textSize="30sp"
+    android:textColor="@android:color/white" 
+    android:text="@string/titleStatus"/>
+  
+  <!-- Status EditText  -->
+  <EditText android:layout_width="fill_parent"
+    android:layout_height="fill_parent" 
+    android:layout_weight="1"
+    android:gravity="top|center_horizontal" 
+    android:background="#cfff" 
+    android:hint="@string/hintText" 
+    android:id="@+id/editText"/>
+    
+  <!-- Update Button -->
+  <Button android:layout_width="fill_parent"
+    android:layout_height="wrap_content" 
+    android:textSize="20sp" 
+    android:text="@string/buttonUpdate"
+    android:id="@+id/buttonUpdate"/>   
+</LinearLayout>
+
+<!-- 
+-layout_weight: with a value of '1', we want all the space height-wise but if 
+another widget needs space, we'll give it to them. '0' would take all the space 
+regardless 
+-layout_gravity: specifies where a widget is positioned in its layout
+-gravity: specifies how the content of this widget is positioned within the widget itself
+
+editText & buttonUpdate are registered under class 'id' in R.java. I'm assuming anything not under
+a predefined folder in /res goes under class 'id'?
+-->

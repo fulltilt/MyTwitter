@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_height="wrap_content" 
+  android:orientation="vertical"
+  android:layout_width="fill_parent">
+
+  <LinearLayout android:layout_height="wrap_content"
+    android:layout_width="fill_parent">
+    
+    <TextView android:layout_height="wrap_content"
+      android:layout_width="fill_parent" 
+      android:layout_weight="1"
+      android:textStyle="bold" 
+      android:text="Slashdot"
+      android:id="@+id/textUser"/>
+
+    <TextView android:layout_height="wrap_content"
+      android:layout_width="fill_parent"
+      android:gravity="right" 
+      android:layout_weight="1" 
+      android:text="10 minutes ago" 
+      android:id="@+id/textCreatedAt"/>
+  
+  </LinearLayout>
+
+<LinearLayout android:layout_height="wrap_content"
+    android:layout_width="fill_parent" android:orientation="horizontal" android:baselineAligned="true">
+  <ImageView android:id="@+id/icon"
+        android:src="@drawable/twitter_icon" android:layout_weight="1" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_gravity="left"/>
+  
+  <TextView android:layout_height="wrap_content"
+    android:layout_width="fill_parent" 
+    android:text="Firefox comes to Android" 
+    android:id="@+id/textText" android:layout_weight="1" android:layout_gravity="left"/>
+	</LinearLayout>
+	
+</LinearLayout>

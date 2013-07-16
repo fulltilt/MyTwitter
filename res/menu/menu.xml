@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+	<item android:icon="@android:drawable/ic_menu_preferences"
+	    android:title="@string/titlePrefs"
+		android:id="@+id/itemPrefs"/>
+	<item android:icon="@android:drawable/ic_media_play"
+    	android:title="@string/titleServiceStart"
+    	android:id="@+id/itemToggleService" />		
+	<item android:icon="@android:drawable/ic_menu_edit" 
+		android:title="@string/titleStatus"
+    	android:id="@+id/itemStatus"/>
+    <item android:icon="@android:drawable/ic_menu_sort_by_size"
+    	android:title="@string/titleTimeline" 
+    	android:id="@+id/itemTimeline"/>		
+</menu>
+
+<!-- 
+@android...: used to access Android system resources
+-itemPrefs is registered under class 'id' in R.java. I'm assuming anything not under
+a predefined folder in /res goes under class 'id'?
+-->
